@@ -1,22 +1,43 @@
+# CursAR 🎓
 
-# proyecto_app
+Tu guía para encontrar la carrera y la institución educativa ideal.
 
-A new Flutter project.
+## Descripción
 
-## Getting Started
+CursAR es una aplicación móvil Android desarrollada con Flutter que ayuda a estudiantes a descubrir carreras, universidades e institutos terciarios de la Provincia de Buenos Aires.
 
-This project is a starting point for a Flutter application.
+La aplicación permite realizar tests de orientación vocacional, explorar ofertas educativas y recibir recomendaciones personalizadas según los intereses y preferencias del usuario.
 
-A few resources to get you started if this is your first Flutter project:
+## Características principales
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Registro e inicio de sesión mediante Firebase Authentication.
+- Test de orientación vocacional.
+- Exploración de carreras universitarias y terciarias.
+- Búsqueda y filtrado de instituciones educativas.
+- Recomendaciones académicas personalizadas.
+- Sistema de favoritos para guardar carreras e instituciones.
+- Visualización de universidades e institutos en mapa.
+- Notificaciones dentro de la aplicación.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tecnologías utilizadas
 
-# CursAR
-Aplicación Android desarrollada con Flutter y Firebase que permite a los usuarios explorar carreras, universidades e institutos terciarios mediante tests vocacionales, filtros y recomendaciones académicas personalizadas. 
+- Flutter
+- Dart
+- Firebase Authentication
+- Cloud Firestore
+- Google Maps
 
+## Objetivo del proyecto
+
+Facilitar el acceso a la información educativa y acompañar a los estudiantes en el proceso de elección de una carrera y una institución académica.
+
+## Integrantes
+
+- Quinteros Maia
+- Lozada Alejandra
+- Lugo Romina
+- Villalba Thiago
+
+## Estado del proyecto
+
+Proyecto académico en desarrollo.
