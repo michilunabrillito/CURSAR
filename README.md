@@ -33,9 +33,9 @@ Facilitar el acceso a la información educativa y acompañar a los estudiantes e
 
 ## Integrantes
 
-- Quinteros Maia
 - Lozada Alejandra
 - Lugo Romina
+- Quinteros Maia
 - Villalba Thiago
 
 ## Estado del proyecto
