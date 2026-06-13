@@ -1,4 +1,4 @@
-# CursAR 🎓
+# CURSAR 🎓
 
 Tu guía para encontrar la carrera y la institución educativa ideal.
 
