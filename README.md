@@ -4,7 +4,7 @@ Tu guía para encontrar la carrera y la institución educativa ideal.
 
 ## Descripción
 
-CursAR es una aplicación móvil Android desarrollada con Flutter que ayuda a estudiantes a descubrir carreras, universidades e institutos terciarios de la Provincia de Buenos Aires.
+CursAR es una aplicación móvil Android desarrollada con Flutter que ayuda a estudiantes a descubrir carreras, universidades e institutos terciarios de la Provincia de Buenos Aires, cercanas a su domilicio.
 
 La aplicación permite realizar tests de orientación vocacional, explorar ofertas educativas y recibir recomendaciones personalizadas según los intereses y preferencias del usuario.
 
