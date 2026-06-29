@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -27,10 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return InputDecoration(
       hintText: hintText,
       hintStyle: const TextStyle(color: _lightGrey, fontSize: 14),
-      prefixIcon: Padding(
-        padding: const EdgeInsets.all(12),
-        child: prefixIcon,
-      ),
+      prefixIcon: Padding(padding: const EdgeInsets.all(12), child: prefixIcon),
       suffixIcon: suffixIcon,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       border: OutlineInputBorder(
@@ -51,27 +46,26 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _loginWithEmail() async {
-    Navigator.pushReplacementNamed(context, '/home');
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('¡hola, usuario!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      Navigator.pushReplacementNamed(context, '/home');
+    }
   }
 
   Future<void> _loginWithGoogle() async {
-    try {
-      final GoogleSignIn googleSignIn = GoogleSignIn();
-      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-
-      if (googleUser != null) {
-        final googleAuth = await googleUser.authentication;
-        final credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken,
-          idToken: googleAuth.idToken,
-        );
-        await FirebaseAuth.instance.signInWithCredential(credential);
-        if (mounted) {
-          Navigator.pushReplacementNamed(context, '/home');
-        }
-      }
-    } catch (e) {
-      debugPrint("Error: $e");
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('¡hola, usuario!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      Navigator.pushReplacementNamed(context, '/home');
     }
   }
 
@@ -102,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Expanded(
                           flex: 2,
-                          child: Container(
+                          child: SizedBox(
                             width: double.infinity,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -114,7 +108,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 const SizedBox(height: 40),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 32,
+                                  ),
                                   child: RichText(
                                     textAlign: TextAlign.center,
                                     text: TextSpan(
@@ -123,15 +119,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                         color: _darkNavy.withValues(alpha: 0.8),
                                       ),
                                       children: const [
-                                        TextSpan(text: 'Encontrá tu próxima '),
                                         TextSpan(
-                                          text: 'carrera',
+                                          text: 'Tu futuro académico',
                                           style: TextStyle(
                                             color: _mainBrandBlue,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        TextSpan(text: ' y guardá tus favoritos'),
+                                        TextSpan(
+                                          text: ' en un solo lugar',
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -153,7 +150,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.only(top: 40, left: 24, right: 24, bottom: 24),
+                              padding: const EdgeInsets.only(
+                                top: 40,
+                                left: 24,
+                                right: 24,
+                                bottom: 24,
+                              ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -184,7 +186,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       suffixIcon: GestureDetector(
                                         onTap: () {
                                           setState(() {
-                                            _obscurePassword = !_obscurePassword;
+                                            _obscurePassword =
+                                                !_obscurePassword;
                                           });
                                         },
                                         child: Padding(
@@ -199,26 +202,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                   const SizedBox(height: 8),
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: TextButton(
-                                      onPressed: () {},
-                                      child: const Text(
-                                        '¿Olvidaste tu contraseña?',
-                                        style: TextStyle(
-                                          color: _mainBrandBlue,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                   const SizedBox(height: 16),
                                   ElevatedButton(
                                     onPressed: _loginWithEmail,
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: _mainBrandBlue,
                                       foregroundColor: Colors.white,
-                                      padding: const EdgeInsets.symmetric(vertical: 16),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 16,
+                                      ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
@@ -236,9 +228,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   const SizedBox(height: 24),
                                   Row(
                                     children: [
-                                      const Expanded(child: Divider(color: _softGreyBorder)),
+                                      const Expanded(
+                                        child: Divider(color: _softGreyBorder),
+                                      ),
                                       const Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 16),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16,
+                                        ),
                                         child: Text(
                                           'o continuá con',
                                           style: TextStyle(
@@ -247,7 +243,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ),
                                         ),
                                       ),
-                                      const Expanded(child: Divider(color: _softGreyBorder)),
+                                      const Expanded(
+                                        child: Divider(color: _softGreyBorder),
+                                      ),
                                     ],
                                   ),
                                   const SizedBox(height: 24),
@@ -256,17 +254,24 @@ class _LoginScreenState extends State<LoginScreen> {
                                     style: OutlinedButton.styleFrom(
                                       backgroundColor: Colors.white,
                                       foregroundColor: _darkNavy,
-                                      padding: const EdgeInsets.symmetric(vertical: 14),
-                                      side: const BorderSide(color: _softGreyBorder),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 14,
+                                      ),
+                                      side: const BorderSide(
+                                        color: _softGreyBorder,
+                                      ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                     ),
                                     child: const Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Image(
-                                          image: AssetImage('assets/imagenes/logoGoogle.png'),
+                                          image: AssetImage(
+                                            'assets/imagenes/logoGoogle.png',
+                                          ),
                                           height: 24,
                                         ),
                                         SizedBox(width: 12),
@@ -292,7 +297,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                       GestureDetector(
-                                        onTap: () {},
+                                        onTap: () => Navigator.pushReplacementNamed(
+                                          context,
+                                          '/home',
+                                        ),
                                         child: const Text(
                                           'Registrate',
                                           style: TextStyle(
