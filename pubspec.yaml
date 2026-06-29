@@ -30,9 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: 2.32.0
-  firebase_auth: 4.16.0
-  google_sign_in: 6.2.1  # Versión estable que ya probamos
+  firebase_core: ^4.9.0
+  firebase_auth: ^6.5.1
+  cloud_firestore: ^6.4.1
+  google_sign_in: ^7.2.0  # Versión estable que ya probamos
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
