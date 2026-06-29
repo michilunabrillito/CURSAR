@@ -33,10 +33,10 @@ Facilitar el acceso a la información educativa y acompañar a los estudiantes e
 
 ## Integrantes
 
-- Lozada Alejandra
-- Lugo Romina
-- Quinteros Maia
-- Villalba Thiago
+- Lozada Alejandra: Desarrollo Full Stack | Diseño de interfaces | Documentación | Backend | Testing
+- Lugo Romina: Desarrollo Full Stack | Documentación del MVP | Diseño UI/UX | Testing
+- Quinteros Maia: Desarrollo Full Stack | Base de datos | Documentación | Testing
+- Villalba Thiago: Desarrollo Full Stack | Backend | Testing
 
 ## Estado del proyecto
 
